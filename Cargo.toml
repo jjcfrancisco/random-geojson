@@ -1,13 +1,13 @@
 [package]
 name = "random-geojson"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2024"
 description = "Generate random GeoJSON data"
 authors = ["Francisco Jimenez <jjcfrank@gmail.com>"]
 repository = "https://github.com/jjcfrancisco/random-geojson"
 license = "MIT OR Apache-2.0"
-keywords = ["geojson", "random", "testing"]
-categories = ["development-tools", "testing"]
+keywords = ["geojson", "random"]
+categories = ["development-tools", "geospatial"]
 
 [dependencies]
 clap = { version = "4.5.38", features = ["derive"] }
