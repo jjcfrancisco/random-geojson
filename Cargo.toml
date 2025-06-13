@@ -7,7 +7,7 @@ authors = ["Francisco Jimenez <jjcfrank@gmail.com>"]
 repository = "https://github.com/jjcfrancisco/random-geojson"
 license = "MIT OR Apache-2.0"
 keywords = ["geojson", "random"]
-categories = ["development-tools", "geospatial"]
+categories = ["development-tools"]
 
 [dependencies]
 clap = { version = "4.5.38", features = ["derive"] }
