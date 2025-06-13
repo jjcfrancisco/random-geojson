@@ -1,14 +1,12 @@
 mod error;
 mod geometry;
 
-use error::{RandomGeojsonError, RandomGeojsonResult};
-use geometry::{Crs, RandomGeometry};
-
 use clap::Parser;
-use geojson::{
-    Feature, FeatureCollection, Geometry, JsonObject, Value::LineString, Value::Point,
-    Value::Polygon, feature::Id,
-};
+use error::{RandomGeojsonError, RandomGeojsonResult};
+use geojson::Value::{LineString, Point, Polygon};
+use geojson::feature::Id;
+use geojson::{Feature, FeatureCollection, Geometry, JsonObject};
+use geometry::{Crs, RandomGeometry};
 use rand::Rng;
 use uuid::Uuid;
 
