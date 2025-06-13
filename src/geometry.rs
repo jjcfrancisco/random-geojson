@@ -1,5 +1,6 @@
-use crate::RandomGeojsonError;
 use rand::Rng;
+
+use crate::RandomGeojsonError;
 
 #[derive(Debug, Clone, Copy)]
 pub struct Bounds {
@@ -113,7 +114,10 @@ mod tests {
         assert!(matches!("wgs84".parse::<Crs>(), Ok(Crs::WGS84)));
         assert!(matches!("4326".parse::<Crs>(), Ok(Crs::WGS84)));
         assert!(matches!("webmercator".parse::<Crs>(), Ok(Crs::WebMercator)));
-        assert!(matches!("web_mercator".parse::<Crs>(), Ok(Crs::WebMercator)));
+        assert!(matches!(
+            "web_mercator".parse::<Crs>(),
+            Ok(Crs::WebMercator)
+        ));
         assert!(matches!("3857".parse::<Crs>(), Ok(Crs::WebMercator)));
     }
 
@@ -182,4 +186,3 @@ mod tests {
         }
     }
 }
-
