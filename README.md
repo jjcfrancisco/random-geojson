@@ -1,5 +1,7 @@
 # random-geojson
 
+[![Tests](https://github.com/jjcfrancisco/random-geojson/actions/workflows/tests.yaml/badge.svg?branch=main)](https://github.com/jjcfrancisco/random-geojson/actions/workflows/tests.yaml)
+
 **random-geojson** is a command-line tool written in Rust for generating random [GeoJSON](https://geojson.org/) geometries. It supports multiple geometry types (`Point`, `LineString`, `Polygon`, and `All`) and coordinate systems (`WGS84`, `WebMercator`, `4326`, `3857`). The tool can generate a collection of random features with customizable properties and output them to a file in either compact or pretty-printed JSON.
 
 ## Features
@@ -19,8 +21,8 @@ random-geojson [OPTIONS]
 
 ### Options
 
-- `--num-columns <NUM_COLUMNS>`  
-  Number of properties (columns) to generate for each feature (default: 0)
+- `--num-properties <NUM_PROPERTIES>`  
+  Number of properties to generate for each feature (default: 0)
 
 - `--length <LENGTH>`  
   Number of features to generate (default: 100)
@@ -42,12 +44,16 @@ random-geojson [OPTIONS]
 Generate 10 random points in WGS84 with 3 properties per feature and pretty-printed output:
 
 ```
-random-geojson --length 10 --geometry-type Point --num-columns 3 --pretty -o mydata.geojson
+random-geojson --length 10 --geometry-type Point --num-properties 3 --pretty -o mydata.geojson
 ```
 
 ## Output
 
 The tool generates a valid GeoJSON `FeatureCollection` with the specified number of features and properties. Each feature has a unique UUID as its `id`, random geometry, and random property values.
+
+## To do
+- [ ] Add examples
+- [ ] Allow fine-grained control over generated property types and values
 
 ## License
 

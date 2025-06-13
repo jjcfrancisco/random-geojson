@@ -19,9 +19,9 @@ use uuid::Uuid;
     version
 )]
 pub struct Cli {
-    /// Number of columns (optional, defaults to 0)
+    /// Number of properties (optional, defaults to 0)
     #[arg(long, default_value_t = 0, value_parser = validate_zero_or_more)]
-    pub num_columns: usize,
+    pub num_properties: usize,
 
     /// Length of data (optional, defaults to 100)
     #[arg(long, default_value_t = 100, value_parser = validate_zero_or_more)]
@@ -125,10 +125,10 @@ fn main() -> RandomGeojsonResult<()> {
         feature.geometry = Some(geometry);
 
         // Generate random properties
-        if cli.num_columns > 0 {
+        if cli.num_properties > 0 {
             let mut properties = JsonObject::new();
 
-            for i in 1..=cli.num_columns {
+            for i in 1..=cli.num_properties {
                 let key = format!("prop{}", i);
                 let value = random_property_value();
                 properties.insert(key, value);
